@@ -29,9 +29,9 @@ jobs:
       id-token: write
       contents: write
     env:
-      CLUSTER_NAME : $inputs.cluster_name
-      APP_NAME : $inputs.app_name
-      ASSUME_ROLE_ARN: $inputs.role_arn
+      CLUSTER_NAME : ${{ inputs.cluster_name }}
+      APP_NAME : ${{ inputs.app_name }}
+      ASSUME_ROLE_ARN: ${{ inputs.role_arn }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
