@@ -5,7 +5,7 @@
 name: Add new application
 
 env:
-  AWS_REGION: us-east-1
+  AWS_REGION: "us-east-1"
 
 on:
   workflow_dispatch:
@@ -32,7 +32,6 @@ jobs:
       CLUSTER_NAME : ${{ inputs.cluster_name }}
       APP_NAME : ${{ inputs.app_name }}
       ASSUME_ROLE_ARN: ${{ inputs.role_arn }}
-      AWS_REGION: ${{ env.AWS_REGION }}
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
