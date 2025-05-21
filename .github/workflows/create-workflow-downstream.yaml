@@ -49,7 +49,7 @@ jobs:
             echo "directory $DIR exists skipping helm chart creation"
           else
             echo "directory $DIR does not exist. Creating now..."
-            mkdir -p "$DIR"
+            mkdir -p "$DIR/$APP_NAME"
             cd "$DIR"
             helm create $APP_NAME
             cd ..
