@@ -63,8 +63,8 @@ jobs:
           sed "s#{appName}#$APP_NAME#g" -i .github/workflows/publish.yaml
           
           echo "replace region and roleARN in publish.yaml"
-          sed "s/{region}/$AWS_REGION/g" -i .github/workflows/publish.yaml
-          sed "s/{roleARN}/$ASSUME_ROLE_ARN/g" -i .github/workflows/publish.yaml
+          sed "s#{region}#$AWS_REGION#g" -i .github/workflows/publish.yaml
+          sed "s#{roleARN}#$ASSUME_ROLE_ARN#g" -i .github/workflows/publish.yaml
 
       - name: Commit and push changes
         env:
