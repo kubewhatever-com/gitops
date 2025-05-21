@@ -12,14 +12,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: /kubewhatever-com/zippy/charts
+    repoURL: 555935582951.dkr.ecr.us-west-2.amazonaws.com/kubewhatever-com/zippy/charts
     chart: kubewhatever-com/zippy
-    targetRevision: v0.1.0
+    targetRevision: 0.1.0-rc.2feb035
     helm:
       values: |-
         kubewhatever-com/zippy:
           image:
-            repository: 555935582951.dkr.ecr.us-west-2.amazonaws.com/kubewhatever-com/zippy/kubewhatever-com/zippy
+            repository: 555935582951.dkr.ecr.us-west-2.amazonaws.com/kubewhatever-com/zippy
           ingress:
             className: nginx
             enabled: true
