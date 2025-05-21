@@ -23,9 +23,9 @@ jobs:
   copy-workflow-downstream:
     runs-on: ubuntu-latest
     env:
-      CLUSTER_NAME: $inputs.cluster_name
-      APP_NAME: $inputs.app_name
-      ASSUME_ROLE_ARN: $inputs.role_arn
+      CLUSTER_NAME: ${{ inputs.cluster_name }}
+      APP_NAME: ${{ inputs.app_name }}
+      ASSUME_ROLE_ARN: ${{ inputs.role_arn }}
     steps:
       - name: Checkout gitops repository
         uses: actions/checkout@v4
@@ -35,9 +35,9 @@ jobs:
       - name: Checkout app repository
         uses: actions/checkout@v4
         with:
-          repository: $inputs.app_name
+          repository: ${{ inputs.app_name }}
           path: app
-          token: $secrets.KBOT_TOKEN
+          token: ${{ secrets.KBOT_TOKEN }}
 
       - name: create chart and github workflows
         run: |
@@ -68,8 +68,8 @@ jobs:
 
       - name: Commit and push changes
         env:
-          GITHUB_TOKEN: $secrets.KBOT_TOKEN
-          APP_NAME: $inputs.app_name
+          GITHUB_TOKEN: ${{ secrets.KBOT_TOKEN }}
+          APP_NAME: ${{ inputs.app_name }}
         run: |
           cd ./app
           git config user.name "kubefirst-demo-bot"
