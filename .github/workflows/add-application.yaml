@@ -9,7 +9,8 @@ env:
   
 permissions:
   id-token: write
-  content: read
+  contents: read
+  
 on:
   workflow_dispatch:
     inputs:
