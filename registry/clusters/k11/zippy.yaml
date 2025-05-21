@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubewhatever-com/zippy-k11
+  name: kubewhatever-com-zippy-k11
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
