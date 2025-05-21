@@ -81,7 +81,7 @@ jobs:
           ESCAPED_IMAGE_REGISTRY_URL=$(echo $ECR_IMAGE_REPO_URL | sed 's/\//\\\//g')
 
           sed -i "s#{clusterName}#$CLUSTER_NAME#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
-          sed -i "s#{appName}#$APP_NAME#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
+          sed -i "s#{appName}#$OWNER-$APP#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
           sed -i "s#{chartRepoURL}#$ESCAPED_CHART_REGISTRY_URL#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
           sed -i "s#{imageRepoURL}#$ESCAPED_IMAGE_REGISTRY_URL#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
           sed -i "s#{targetRevision}#$CHART_VERSION#g" ./registry/clusters/${CLUSTER_NAME}/${APP}.yaml
