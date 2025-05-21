@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: 
     chart: kubewhatever-com/zippy
-    targetRevision: None
+    targetRevision: v0.1.0
     helm:
       values: |-
         kubewhatever-com/zippy:
