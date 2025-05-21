@@ -62,7 +62,7 @@ jobs:
             --output text)
 
           CHART_VERSION=$(aws ecr describe-images \
-            --repository-name"$OWNER/charts/$APP" \
+            --repository-name "$OWNER/charts/$APP" \
             --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags[0]' \
             --output text)
 
