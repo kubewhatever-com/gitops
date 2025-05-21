@@ -6,7 +6,10 @@ name: Add new application
 
 env:
   AWS_REGION: "us-west-2"
-
+  
+permissions:
+  id-token: write
+  content: read
 on:
   workflow_dispatch:
     inputs:
